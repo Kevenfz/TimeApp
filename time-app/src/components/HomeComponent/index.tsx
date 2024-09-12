@@ -1,14 +1,22 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Col, Container, Image, Navbar, Row } from "react-bootstrap";
-import bg from '../../assets/Img/BgTimeApp.jpg'
+function HomeComponent({ prev }) {
 
-function HomeComponent() {
   return (
     <Container>
       <Row>
         <Col>
-          <Image src={bg} fluid/>
-          <h1>teste</h1>
+          {prev.cidade ? (
+            <div>
+              <h1>{prev.cidade}</h1>
+              <h2>{prev.temperatura}</h2>
+              <h3>{prev.pais}</h3>
+              <h4>{prev.descricao}</h4>
+              <Image src={prev.icon}></Image>
+            </div>
+          ) : (
+              <p>Nenhuma previsão disponível, Faça uma busca.</p>
+          )}
         </Col>
       </Row>
     </Container>

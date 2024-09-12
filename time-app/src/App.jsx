@@ -1,14 +1,28 @@
-import React from "react";
+import React, { useCallback, useState } from "react";
 import HeaderComponent from "./components/HeaderComponent/index";
 import HomeComponent from "./components/HomeComponent";
 import "./assets/scss/styles.scss";
 import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
+  const [prev, setPrev] = useState({
+    temperatura: "",
+    cidade: "",
+    pais: "",
+    descricao: "",
+    icon: "",
+  });
+  
+  const updateWeatherData = (data) => {
+    setPrev(data);
+  }
+  
+  console.log(prev);
+
   return (
     <>
-      <HeaderComponent />
-      <HomeComponent />
+      <HeaderComponent onData={updateWeatherData} />
+      <HomeComponent prev={prev}/>
     </>
   );
 }
