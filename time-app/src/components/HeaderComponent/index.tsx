@@ -56,7 +56,8 @@ function HeaderComponent({ onData }) {
         };
 
         onData(datePrev);
-      
+        searchInput.reset();
+        
       } catch (error) {
         console.error('Erro ao buscar dados da API:', error);
       }
