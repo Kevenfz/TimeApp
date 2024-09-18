@@ -36,7 +36,7 @@ function HeaderComponent({ onData }) {
 
     if (cidade) {
       try {
-        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&appid=0ec83eb50ebad909439b0e06ad5e1532`);
+        const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cidade}&lang=pt_br&units=metric&appid=0ec83eb50ebad909439b0e06ad5e1532`);
         const data = await response.json();
         console.log(data);
 
