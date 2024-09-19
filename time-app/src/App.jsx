@@ -17,8 +17,6 @@ function App() {
   const updateWeatherData = (data) => {
     setPrev(data);
   }
-  
-  console.log(prev);
 
   return (
     <>

@@ -17,18 +17,22 @@ function HeaderComponent({ onData }) {
   const [cidade, setCidade] = useState("");
   const [weatherData1, setWeatherData1] = useState({
     temperatura: "",
+    tempMin:"",
+    tempMax:"",
+    humidade:"",
+    nivelMar:"",
     cidade: "",
     pais: "",
     descricao: "",
     icon: "",
+    long:"",
+    lat:"",
   });
 
 
   const currentValue = () => {
     const data1 = document.querySelector("input[name=searchInput]").value;
     setCidade(data1);
-    console.log(cidade);
-
   }
 
   const searchInput = async (event: FormEvent<HTMLFormElement>) => {
@@ -44,10 +48,16 @@ function HeaderComponent({ onData }) {
 
         const datePrev = {
           temperatura: data.main.temp,
+          tempMin: data.main.temp_min,
+          tempMax: data.main.temp_max,
+          humidade: data.main.humidity,
+          nivelMar: data.main.sea_level,
           cidade: data.name,
           pais: data.sys.country,
           descricao: data.weather[0]["description"],
           icon: icone,
+          long: data.coord.lon,
+          lat: data.coord.lat,
         };
 
         onData(datePrev);
@@ -60,9 +70,7 @@ function HeaderComponent({ onData }) {
 
   };
 
-  console.log(weatherData1);
-
-
+  
   return (
     <>
       <Container className="container_body">
