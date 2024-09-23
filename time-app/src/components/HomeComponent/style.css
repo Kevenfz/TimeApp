@@ -36,3 +36,15 @@
     background-position: start;
     background-size: cover;
 }
+
+.text-center-custom {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.text-center-custom p {
+    padding: 0;
+    margin: 0;
+}

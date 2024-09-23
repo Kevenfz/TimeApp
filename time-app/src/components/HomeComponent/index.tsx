@@ -54,8 +54,8 @@ function HomeComponent({ prev }) {
 
           ) : (
             <div className="container-sm rounded-3 d-flex justify-content-center p-3 shadow-lg p3 mb-5 bg-body rounded w-50 h-25">
-              <div className="d-flex justify-content-center align-item-center">
-                <p className="align-item-center">Nenhuma previsão disponível, faça uma busca.</p>
+              <div className="text-center-custom">
+                <p >Nenhuma previsão disponível, faça uma busca.</p>
               </div>
             </div>
           )}
