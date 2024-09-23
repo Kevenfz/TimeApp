@@ -80,7 +80,7 @@ function HeaderComponent({ onData }) {
 
         <Navbar expand="lg">
 
-          <Container fluid>
+          <Container>
 
             <Navbar.Brand>Time APP</Navbar.Brand>
             {/* <Image src={Logo} /> */}

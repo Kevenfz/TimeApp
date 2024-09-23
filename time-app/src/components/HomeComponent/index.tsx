@@ -9,7 +9,7 @@ function HomeComponent({ prev }) {
     switch(prev.mainTemp) {
       case 'Clear':
         return 'ensolarado';
-        
+
         case 'Rain':
           return 'chuva-leve';
 
@@ -19,14 +19,14 @@ function HomeComponent({ prev }) {
             case 'Heavy Rain':
             return 'chuva-forte';
           
-            case 'Clouds':
-            return 'nublado';
-            
-            case 'Mist':
-            return 'nevoeiro';
+              case 'Clouds':
+              return 'nublado';
+              
+                case 'Mist':
+                return 'nevoeiro';
 
-            default:
-              return 'Nada';
+                  default:
+                    return 'Nada';
 
     }
   }
@@ -34,9 +34,9 @@ function HomeComponent({ prev }) {
   return (
     <Container className="w-75 h-75 p-3">
       <Row>
-        <Col className="d-flex justify-content-center h-100">
+        <Col className="d-flex justify-content-center card-custom-type">
           {prev.cidade ? (
-            <div className={`container-md rounded-3 d-flex justify-content-center p-3 rounded img-fluid ${bgTempo()}`}>
+            <div className={`container-md rounded-3 h-100 d-flex justify-content-center p-3 rounded img-fluid ${bgTempo()} `}>
               
               <div className=" d-flex flex-wrap justify-content-center align-items-center bg-black.bg-gradient p-2 text-white bg-opacity-25 w-100 h-100 shadow p-3 mb-5 bg-body-tertiary rounded">
                 <h1>{prev.cidade}</h1>
@@ -55,7 +55,7 @@ function HomeComponent({ prev }) {
           ) : (
             <div className="container-sm rounded-3 d-flex justify-content-center p-3 shadow-lg p3 mb-5 bg-body rounded">
               <div className="mh-75">
-                <p className="align-text-center">Nenhuma previsão disponível, faça uma busca.</p>
+                <span className="align-middle">Nenhuma previsão disponível, faça uma busca.</span>
               </div>
             </div>
           )}

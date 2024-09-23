@@ -2,8 +2,8 @@
     padding: 200px;
 }
 
-.custom-card-main {
-    height: 500px;
+.card-custom-type {
+    height: 450px;
 }
 
 .ensolarado {
@@ -13,17 +13,17 @@
 }
 .nublado {
     background-image: url(../../assets/Img/nublado.jpeg);
-    background-position: center;
+    background-position: start;
     background-size: cover;
 }
 .chuva-leve {
     background-image: url(../../assets/Img/chuvaLeve.jpeg);
-    background-position: center;
+    background-position: start;
     background-size: cover;
 }
 .chuva-forte {
     background-image: url(../../assets/Img/chuvaForte.jpeg);
-    background-position: center;
+    background-position: start;
     background-size: cover;
 }
 .tempestade {
@@ -33,6 +33,6 @@
 }
 .nevoeiro {
     background-image: url(../../assets/Img/nevoeiro.jpeg);
-    background-position: center;
+    background-position: start;
     background-size: cover;
 }
