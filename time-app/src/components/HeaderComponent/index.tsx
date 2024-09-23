@@ -1,6 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
 import { Cidades } from "../../assets/services/cidades";
-import Logo from "../../assets/Img/logoKev.png";
 import "./style.css";
 import {
   Container,
@@ -27,6 +26,7 @@ function HeaderComponent({ onData }) {
     icon: "",
     long:"",
     lat:"",
+    main:"",
   });
 
 
@@ -58,8 +58,11 @@ function HeaderComponent({ onData }) {
           icon: icone,
           long: data.coord.lon,
           lat: data.coord.lat,
+          mainTemp: data.weather[0]["main"],
         };
-
+        
+        console.log(datePrev.mainTemp);
+        
         onData(datePrev);
 
       } catch (error) {
