@@ -4,51 +4,58 @@ import "./style.css";
 
 function HomeComponent({ prev }) {
   console.log(prev.main);
-  
+
   const bgTempo = () => {
-    switch(prev.mainTemp) {
+    switch (prev.mainTemp) {
       case 'Clear':
         return 'ensolarado';
 
-        case 'Rain':
-          return 'chuva-leve';
+      case 'Rain':
+        return 'chuva-leve';
 
-          case 'Thunderstorm':
-            return 'tempestade';
-          
-            case 'Heavy Rain':
-            return 'chuva-forte';
-          
-              case 'Clouds':
-              return 'nublado';
-              
-                case 'Mist':
-                return 'nevoeiro';
+      case 'Thunderstorm':
+        return 'tempestade';
 
-                  default:
-                    return 'Nada';
+      case 'Heavy Rain':
+        return 'chuva-forte';
+
+      case 'Clouds':
+        return 'nublado';
+
+      case 'Mist':
+        return 'nevoeiro';
+
+      default:
+        return 'Nada';
 
     }
   }
 
   return (
-    <Container className="w-75 h-75 p-3">
+    <Container className="w-75 h-75 p-2">
       <Row>
         <Col className="d-flex justify-content-center card-custom-type">
           {prev.cidade ? (
-            <div className={`container-md rounded-3 h-100 d-flex justify-content-center p-3 rounded img-fluid ${bgTempo()} `}>
-              
-              <div className=" d-flex flex-wrap justify-content-center align-items-center bg-black.bg-gradient p-2 text-white bg-opacity-25 w-100 h-100 shadow p-3 mb-5 bg-body-tertiary rounded">
-                <h1>{prev.cidade}</h1>
-                <h2>{`${parseInt(prev.temperatura)}°C`}</h2>
-                <h3>{prev.pais}</h3>
-                <h4>{prev.descricao}</h4>
-                <Image src={prev.icon}></Image>
-                <p>{`Máxima: ${parseInt(prev.tempMax)}°C`}</p>
-                <p>{`Mínima: ${parseInt(prev.tempMin)}°C`}</p>
-                <p>{`Humidade: ${prev.humidade} %`}</p>
-                <p>{`Nível do mar: ${prev.nivelMar} m`}</p>
-                <p>{`Longitude: ${prev.long}, Latitude: ${prev.lat}`}</p>
+            <div className={`container-md rounded-3 h-100 d-flex justify-content-center p-3 rounded img-fluid ${bgTempo()} shadow-lg p-3 mb-3 bg-body-tertiary rounded `}>
+
+              <div className=" d-flex flex-wrap justify-content-center align-items-center text-white bg-opacity-25 w-100 h-100 shadow-lg p-3 mb-5 bg-body-tertiary rounded">
+                
+                <div>
+                  <h1>{prev.cidade}</h1>
+                  <span>{prev.pais}</span>
+                  <h2>{`${parseInt(prev.temperatura)}°C`}</h2>
+                  <h4>{prev.descricao}</h4>
+                  <Image src={prev.icon}></Image>
+                </div>
+
+                <div>
+                  <p>{`Máxima: ${parseInt(prev.tempMax)}°C`}</p>
+                  <p>{`Mínima: ${parseInt(prev.tempMin)}°C`}</p>
+                  <p>{`Humidade: ${prev.humidade} %`}</p>
+                  <p>{`Nível do mar: ${prev.nivelMar} m`}</p>
+                  <p>{`Longitude: ${prev.long}, Latitude: ${prev.lat}`}</p>
+                </div>
+
               </div>
             </div>
 

@@ -1,5 +1,13 @@
-html, body, #root {
-  height: 100%;
+html,
+body,
+#root {
+  height: 100vh;
   margin: 0;
   padding: 0;
+  overflow: hidden;
+  background: rgb(54, 117, 150);
+  background: linear-gradient(172deg, rgba(54, 117, 150, 1) 0%, rgba(2, 6, 41, 1) 100%);
+  background-size: cover;
+  background-position: center; 
+  background-repeat: no-repeat;
 }

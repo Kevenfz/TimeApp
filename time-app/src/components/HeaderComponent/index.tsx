@@ -9,6 +9,7 @@ import {
   Navbar,
   Image,
   Figure,
+  Col,
 } from "react-bootstrap";
 
 // Componente de busca
@@ -16,17 +17,17 @@ function HeaderComponent({ onData }) {
   const [cidade, setCidade] = useState("");
   const [weatherData1, setWeatherData1] = useState({
     temperatura: "",
-    tempMin:"",
-    tempMax:"",
-    humidade:"",
-    nivelMar:"",
+    tempMin: "",
+    tempMax: "",
+    humidade: "",
+    nivelMar: "",
     cidade: "",
     pais: "",
     descricao: "",
     icon: "",
-    long:"",
-    lat:"",
-    main:"",
+    long: "",
+    lat: "",
+    main: "",
   });
 
 
@@ -60,9 +61,9 @@ function HeaderComponent({ onData }) {
           lat: data.coord.lat,
           mainTemp: data.weather[0]["main"],
         };
-        
+
         console.log(datePrev.mainTemp);
-        
+
         onData(datePrev);
 
       } catch (error) {
@@ -73,38 +74,42 @@ function HeaderComponent({ onData }) {
 
   };
 
-  
+
   return (
     <>
-      <Container className="container_body">
+      <Container className="container_body" fluid>
 
-        <Navbar expand="lg">
+        <Navbar expand="md" className="d-flex">
 
-          <Container>
+          <Container className="w-75">
 
-            <Navbar.Brand>Time APP</Navbar.Brand>
-            {/* <Image src={Logo} /> */}
+            <Navbar.Brand href="#home" className="mx-auto">
 
-            <Navbar.Toggle aria-controls="navbarScroll" />
+              <Image onClick={() => { window.location.reload() }} className="logo" src={'src/assets/Img/Logo/Logo1.png'} />
+              <Navbar.Toggle aria-controls="navbarScroll" />
+
+            </Navbar.Brand>
+
+
 
             <Navbar.Collapse id="navbarScroll">
 
               <Nav
-                className="me-auto my-3 my-lg-0"
+                className="me-auto my-lg-0"
                 style={{ maxHeight: "100px" }}
                 navbarScroll
               ></Nav>
               <Form
                 onSubmit={searchInput}
-                className="d-flex d-flex align-items-center my-2"
+                className="d-flex d-flex my-4"
               >
-                <Form.Label className="d-flex align-items-center me-5">
+                <Form.Label>
 
                 </Form.Label>
                 <Form.Control
                   type="search"
                   placeholder="Digite a cidade..."
-                  className="me-2 shadow-sm bg-body-tertiary rounded"
+                  className="me-3 shadow-sm bg-body-tertiary rounded"
                   aria-label="Search"
                   name="searchInput"
                 />
@@ -125,6 +130,7 @@ function HeaderComponent({ onData }) {
           </Container>
 
         </Navbar>
+
 
       </Container>
     </>
