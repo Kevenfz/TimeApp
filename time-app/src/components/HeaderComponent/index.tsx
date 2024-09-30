@@ -10,6 +10,7 @@ import {
   Image,
   Figure,
   Col,
+  Stack,
 } from "react-bootstrap";
 
 // Componente de busca
@@ -77,20 +78,14 @@ function HeaderComponent({ onData }) {
 
   return (
     <>
-      <Container className="container_body" fluid>
+      <Container className="container_body" >
 
-        <Navbar expand="md" className="d-flex">
+        <Navbar expand="md" > 
 
-          <Container className="w-75">
-
-            <Navbar.Brand href="#home" className="mx-auto">
+          <Stack className="d-flex justify-content-center align-items-center" gap={1}>
 
               <Image onClick={() => { window.location.reload() }} className="logo" src={'src/assets/Img/Logo/Logo1.png'} />
               <Navbar.Toggle aria-controls="navbarScroll" />
-
-            </Navbar.Brand>
-
-
 
             <Navbar.Collapse id="navbarScroll">
 
@@ -101,7 +96,7 @@ function HeaderComponent({ onData }) {
               ></Nav>
               <Form
                 onSubmit={searchInput}
-                className="d-flex d-flex my-4"
+                className="d-flex my-3"
               >
                 <Form.Label>
 
@@ -109,7 +104,7 @@ function HeaderComponent({ onData }) {
                 <Form.Control
                   type="search"
                   placeholder="Digite a cidade..."
-                  className="me-3 shadow-sm bg-body-tertiary rounded"
+                  className="me-2 shadow-sm bg-body-tertiary rounded w-100"
                   aria-label="Search"
                   name="searchInput"
                 />
@@ -118,7 +113,6 @@ function HeaderComponent({ onData }) {
                   type="submit"
                   onClick={currentValue}
                   variant="outline-success"
-                // className="shadow-sm bg-body-tertiary rounded"
                 >
                   Busca
                 </Button>
@@ -128,7 +122,7 @@ function HeaderComponent({ onData }) {
 
             </Navbar.Collapse>
 
-          </Container>
+          </Stack>
 
         </Navbar>
 
