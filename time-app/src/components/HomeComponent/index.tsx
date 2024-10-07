@@ -85,6 +85,7 @@ function HomeComponent({ prev }) {
               </div>
             </div>
           )}
+          
     </Container>
   );
 }

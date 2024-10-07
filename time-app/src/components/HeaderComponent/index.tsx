@@ -1,4 +1,5 @@
 import React, { FormEvent, useEffect, useState } from "react";
+import ToastNotification from "../Toast";
 import { Cidades } from "../../assets/services/cidades";
 import "./style.css";
 import {
@@ -16,6 +17,8 @@ import {
 // Componente de busca
 function HeaderComponent({ onData }) {
   const [cidade, setCidade] = useState("");
+  const [errorMessage, setErrorMessage] = useState('');
+  const [showToast, setShowToast] = useState(false);
   const [weatherData1, setWeatherData1] = useState({
     temperatura: "",
     tempMin: "",
@@ -31,6 +34,7 @@ function HeaderComponent({ onData }) {
     main: "",
   });
 
+  const handleCloseToast = () => setShowToast(false);
 
   const currentValue = () => {
     const data1 = document.querySelector("input[name=searchInput]").value;
@@ -68,7 +72,11 @@ function HeaderComponent({ onData }) {
         onData(datePrev);
 
       } catch (error) {
-        console.error('Erro ao buscar dados da API:', error);
+        setErrorMessage("Cidade não encontrada, pesquise novamente...");
+        setShowToast(true);
+
+        console.error('Erro ao buscar dados da API:', error.cod);
+
       }
 
     }
@@ -80,12 +88,12 @@ function HeaderComponent({ onData }) {
     <>
       <Container className="container_body" >
 
-        <Navbar expand="md" > 
+        <Navbar expand="md" >
 
           <Stack className="d-flex justify-content-center align-items-center" gap={1}>
 
-              <Image onClick={() => { window.location.reload() }} className="logo" src={'src/assets/Img/Logo/Logo1.png'} />
-              <Navbar.Toggle aria-controls="navbarScroll" />
+            <Image onClick={() => { window.location.reload() }} className="logo" src={'src/assets/Img/Logo/Logo1.png'} />
+            <Navbar.Toggle aria-controls="navbarScroll" />
 
             <Navbar.Collapse id="navbarScroll">
 
@@ -116,7 +124,7 @@ function HeaderComponent({ onData }) {
                 >
                   Busca
                 </Button>
-                
+
 
               </Form>
 
@@ -126,6 +134,10 @@ function HeaderComponent({ onData }) {
 
         </Navbar>
 
+        <ToastNotification
+          show={showToast}
+          message={errorMessage}
+          handleClose={handleCloseToast} />
 
       </Container>
     </>
