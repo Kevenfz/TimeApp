@@ -34,13 +34,16 @@ function HeaderComponent({ onData }) {
     main: "",
   });
 
+  //Função de exibição do toast, inicialmente o state false
   const handleCloseToast = () => setShowToast(false);
 
+  //Função que pega o valor do input "cidade" e atualiza o state
   const currentValue = () => {
     const data1 = document.querySelector("input[name=searchInput]").value;
     setCidade(data1);
   }
 
+  //Função responsável por buscar os dados na API e atualizar o state da previsão do tempo
   const searchInput = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
 
@@ -72,7 +75,7 @@ function HeaderComponent({ onData }) {
         onData(datePrev);
 
       } catch (error) {
-        setErrorMessage("Cidade não encontrada, pesquise novamente...");
+        setErrorMessage("Erro ao buscar cidade, pesquise novamente...");
         setShowToast(true);
 
         console.error('Erro ao buscar dados da API:', error.cod);

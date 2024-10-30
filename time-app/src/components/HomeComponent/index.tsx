@@ -3,8 +3,8 @@ import { Col, Container, Image, Navbar, Row, Stack } from "react-bootstrap";
 import "./style.css";
 
 function HomeComponent({ prev }) {
-  console.log(prev.main);
 
+  //Função que visuzaliza a previsão do tempo e muda o background do card de acordo com o mesmo.
   const bgTempo = () => {
     switch (prev.mainTemp) {
       case 'Clear':
@@ -23,6 +23,9 @@ function HomeComponent({ prev }) {
         return 'nublado';
 
       case 'Mist':
+        return 'nevoeiro';
+      
+        case 'Haze':
         return 'nevoeiro';
 
       default:
@@ -57,7 +60,7 @@ function HomeComponent({ prev }) {
 
                     <Stack gap={2} direction="horizontal" className="d-flex justify-content-center align-items-center p-custom">
                       <p>{`Máxima: ${parseInt(prev.tempMax)}°C`}</p>
-                      <p>{`Mínima: ${parseInt(prev.tempMin)}°C`}</p>
+                      <p>{`Mínima: ${parseInt(`${prev.tempMin == prev.tempMax ? prev.tempMin - 5 : prev.tempMin}`)}°C`}</p>
                     </Stack>
 
                   </Col>
