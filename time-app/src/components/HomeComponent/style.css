@@ -1,0 +1,97 @@
+.jumbtron {
+    padding: 200px;
+}
+
+.p-custom p {
+    margin: 0;
+}
+
+.card-custom-type {
+    height: 80%;
+    width: 50%;
+}
+
+.text-custom {
+    display: flex;
+    align-items: center;
+}
+
+.title-custom{
+    font-size: 22px;
+    /* text-align: center; */
+    margin: 0;
+}
+
+.text-custom p {
+    margin: 0;
+}
+
+.ensolarado {
+    background-image: url(../../assets/Img/ensolarado.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.nublado {
+    background-image: url(../../assets/Img/nublado.jpeg);
+    background-position: start;
+    background-size: cover;
+}
+
+.chuva-leve {
+    background-image: url(../../assets/Img/chuvaLeve.jpeg);
+    background-position: start;
+    background-size: cover;
+}
+
+.chuva-forte {
+    background-image: url(../../assets/Img/chuvaForte.jpeg);
+    background-position: start;
+    background-size: cover;
+}
+
+.tempestade {
+    background-image: url(../../assets/Img/chuvaForte.jpeg);
+    background-position: center;
+    background-size: cover;
+}
+
+.nevoeiro {
+    background-image: url(../../assets/Img/nevoeiro.jpeg);
+    background-position: start;
+    background-size: cover;
+}
+
+.divPrev {
+    width: 100%;
+    height: auto;
+    margin-bottom: -10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.divPrev h4 {
+    margin: 0;
+    padding: 0;
+
+}
+
+.divPrev h3,
+span {
+    margin: 0;
+    padding: 0;
+    /* font-size: 17px; */
+}
+
+.sideA {
+    width: 500px;
+    height: 100%;
+}
+
+.sideB {
+    width: 200px;
+    height: 100%;
+
+}
