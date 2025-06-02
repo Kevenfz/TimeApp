@@ -43,7 +43,7 @@ function HomeComponent({ prev }) {
               <Row className=" d-flex justify-content-center align-items-center text-white p-2 w-100 h-100 bg-dark opacity-50 shadow-lg rounded">
                 <Col sm={12}>
                   <div className="divPrev">
-                    <p className="title-custom">Resultado de, </p>
+                    <p className="title-custom">Resultado de,</p>
                     <h4>{prev.cidade}</h4>
                     <span >{prev.pais}</span>
                   </div>
