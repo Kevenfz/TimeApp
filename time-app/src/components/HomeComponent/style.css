@@ -27,37 +27,37 @@
 }
 
 .ensolarado {
-    background-image: url(../../assets/Img/ensolarado.jpeg);
+    background-image: url(Img/ensolarado.jpeg);
     background-position: center;
     background-size: cover;
 }
 
 .nublado {
-    background-image: url(../../assets/Img/nublado.jpeg);
+    background-image: url(/Img/nublado.jpeg);
     background-position: start;
     background-size: cover;
 }
 
 .chuva-leve {
-    background-image: url(../../assets/Img/chuvaLeve.jpeg);
+    background-image: url(Img/chuvaLeve.jpeg);
     background-position: start;
     background-size: cover;
 }
 
 .chuva-forte {
-    background-image: url(../../assets/Img/chuvaForte.jpeg);
+    background-image: url(Img/chuvaForte.jpeg);
     background-position: start;
     background-size: cover;
 }
 
 .tempestade {
-    background-image: url(../../assets/Img/chuvaForte.jpeg);
+    background-image: url(Img/chuvaForte.jpeg);
     background-position: center;
     background-size: cover;
 }
 
 .nevoeiro {
-    background-image: url(../../assets/Img/nevoeiro.jpeg);
+    background-image: url(Img/nevoeiro.jpeg);
     background-position: start;
     background-size: cover;
 }
