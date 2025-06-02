@@ -33,7 +33,7 @@
 }
 
 .nublado {
-    background-image: url(/Img/nublado.jpeg);
+    background-image: url(Img/nublado.jpeg);
     background-position: start;
     background-size: cover;
 }
