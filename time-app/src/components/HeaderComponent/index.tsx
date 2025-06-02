@@ -95,7 +95,7 @@ function HeaderComponent({ onData }) {
 
           <Stack className="d-flex justify-content-center align-items-center" gap={1}>
 
-            <Image onClick={() => { window.location.reload() }} className="logo" src={'src/assets/Img/Logo/Logo1.png'} />
+            <Image onClick={() => { window.location.reload() }} className="logo" src={'/Img/Logo/Logo1.png'} />
             <Navbar.Toggle aria-controls="navbarScroll" />
 
             <Navbar.Collapse id="navbarScroll">
